@@ -1,0 +1,16 @@
+<h1>here's a board.</h1>
+<p><%= @test %></p>
+<table>
+  <% 8.times do |row| %>
+    <tr>
+      <% 8.times do |space| %>
+        <% piece = Piece.where(x_position: space, y_position: row, game_id: 1).first %>
+        <% if piece %>
+          <td><%= piece.color %></td>
+        <% else %>
+          <td>(<%= space %>,<%= row %>)</td>
+        <% end %>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
