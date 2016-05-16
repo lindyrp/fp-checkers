@@ -1,36 +1,32 @@
 class GamesController < ApplicationController
   def new
   end
-end
 
-
-class Board
-  
-  attr_accessor :board
-   
-  
-  def [](pos)
-    row, col = pos
-    @board[row][col]
+  def board
+    Piece.find_or_create_by(color:"red", x_position: 1, y_position: 0, game_id: 1)
+    Piece.find_or_create_by(color:"red", x_position: 3, y_position: 0, game_id: 1)
+    Piece.find_or_create_by(color:"red", x_position: 5, y_position: 0, game_id: 1)
+    Piece.find_or_create_by(color:"red", x_position: 7, y_position: 0, game_id: 1)
+    Piece.find_or_create_by(color:"red", x_position: 0, y_position: 1, game_id: 1)
+    Piece.find_or_create_by(color:"red", x_position: 2, y_position: 1, game_id: 1)
+    Piece.find_or_create_by(color:"red", x_position: 4, y_position: 1, game_id: 1)
+    Piece.find_or_create_by(color:"red", x_position: 6, y_position: 1, game_id: 1)
+    Piece.find_or_create_by(color:"red", x_position: 1, y_position: 2, game_id: 1)
+    Piece.find_or_create_by(color:"red", x_position: 3, y_position: 2, game_id: 1)
+    Piece.find_or_create_by(color:"red", x_position: 5, y_position: 2, game_id: 1)
+    Piece.find_or_create_by(color:"red", x_position: 7, y_position: 2, game_id: 1)
+    Piece.find_or_create_by(color:"black", x_position: 0, y_position: 5, game_id: 1)
+    Piece.find_or_create_by(color:"black", x_position: 2, y_position: 5, game_id: 1)
+    Piece.find_or_create_by(color:"black", x_position: 4, y_position: 5, game_id: 1)
+    Piece.find_or_create_by(color:"black", x_position: 6, y_position: 5, game_id: 1)
+    Piece.find_or_create_by(color:"black", x_position: 1, y_position: 6, game_id: 1)
+    Piece.find_or_create_by(color:"black", x_position: 3, y_position: 6, game_id: 1)
+    Piece.find_or_create_by(color:"black", x_position: 5, y_position: 6, game_id: 1)
+    Piece.find_or_create_by(color:"black", x_position: 7, y_position: 6, game_id: 1)
+    Piece.find_or_create_by(color:"black", x_position: 0, y_position: 7, game_id: 1)
+    Piece.find_or_create_by(color:"black", x_position: 2, y_position: 7, game_id: 1)
+    Piece.find_or_create_by(color:"black", x_position: 4, y_position: 7, game_id: 1)
+    Piece.find_or_create_by(color:"black", x_position: 6, y_position: 7, game_id: 1)
   end
-  
-  def populate_board
-    populate_odd_row(0, :red)
-    populate_even_row(1, :red)
-    populate_odd_row(2, :red)
-    
-    populate_even_row(5, :black)
-    populate_odd_row(6, :black)
-    populate_even_row(7, :black) 
-  end  
-  
-  def populate_odd_row(row, color)
-    @board[row][0, 2, 4, 6] = Piece.find_or_create_by([row, col], self, color)
-    print :color
-  end
-      
-  def populate_even_row(row, color)
-    @board[row][1, 3, 5, 7] = Piece.find_or_create_by([row, col], self, color)
-  end  
 
 end
