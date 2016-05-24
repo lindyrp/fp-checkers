@@ -11,4 +11,5 @@ class Board
   def initialize
     @pieces = []
     @color = [:red, :black]
-    @position_start
+    @position_start = [:x_position, :y_position]
+  end
