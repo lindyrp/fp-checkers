@@ -4,8 +4,11 @@ Checkers::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'games#new'
-  get 'games/board' => 'games#board'
-  resources :games
+  
+  resources :games do
+    resources :pieces
+  end
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

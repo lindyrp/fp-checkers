@@ -1,1 +1,17 @@
-show page
+<h1><%= @game.name %></h1>
+<h3>Let's play!</h3>
+
+<table>
+  <% 8.times do |row| %>
+    <tr>
+      <% 8.times do |space| %>
+        <% piece = @game.pieces.where(x_position: space, y_position: row).first %>
+        <% if piece %>
+          <td><%= piece.color %></td>
+        <% else %>
+          <td>(<%= space %>,<%= row %>)</td>
+        <% end %>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
