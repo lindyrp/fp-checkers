@@ -3,7 +3,7 @@ Checkers::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'games#new'
+  root 'games#index'
   
   resources :games do
     resources :pieces

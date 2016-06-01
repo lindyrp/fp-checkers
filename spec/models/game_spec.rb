@@ -4,8 +4,8 @@ RSpec.describe Game, type: :model do
 
   describe "self.create_with_pieces" do
     it "creates 24 pieces when creating new game" do
-      game = FactoryGirl.create(:game)
-      game.pieces.count == 24
+      game = Game.create_with_pieces({name: "Mary"})
+      expect(game.pieces.count).to eq(24)
     end
   end
 

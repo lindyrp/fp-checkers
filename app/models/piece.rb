@@ -7,4 +7,13 @@ class Piece < ActiveRecord::Base
     @y_position = y_position
   end
 
+  def image
+    if color == "red"
+      "\u262F"
+    else
+      "\u262C"
+    end
+  end
+
+
 end

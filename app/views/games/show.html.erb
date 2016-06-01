@@ -1,15 +1,15 @@
 <h1><%= @game.name %></h1>
 <h3>Let's play!</h3>
 
-<table>
+<table border="1">
   <% 8.times do |row| %>
     <tr>
       <% 8.times do |space| %>
         <% piece = @game.pieces.where(x_position: space, y_position: row).first %>
         <% if piece %>
-          <td><%= piece.color %></td>
+          <td><%= piece.image.html_safe %></td>
         <% else %>
-          <td>(<%= space %>,<%= row %>)</td>
+          <td>&nbsp;</td>
         <% end %>
       <% end %>
     </tr>
